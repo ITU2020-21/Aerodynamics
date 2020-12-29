@@ -18,16 +18,20 @@ from load_airfoil_selig import LOAD_AIRFOIL_SELIG
 load = 'Circle'  # Use the circle geometry
 AoA = 0  # Angle of attack [deg]
 
+XB = 0  # initializing variable
+YB = 0  # initializing variable
+t0 = 0.0  # initializing variable
+
 if load == 'Airfoil':  # If airfoil is to be loaded
     fileName = 'goe623'  # Specify the airfoil filename
     XB, YB = LOAD_AIRFOIL_SELIG(fileName)  # Load X and Y data points of airfoil
 elif load == 'Circle':  # If circle is to be used
     numB = 9  # Number of boundary points
-    tO = 22.5  # Angle offset [deg]
+    t0 = 22.5  # Angle offset [deg]
 
     # Angles used to compute boundary points
     theta = np.linspace(0, 360, numB)  # Angles to compute boundary points [deg]
-    theta = theta + tO  # Add angle offset [deg]
+    theta = theta + t0  # Add angle offset [deg]
     theta = theta * (np.pi / 180)  # Convert angle to radians [rad]
 
     # Boundary points
@@ -50,7 +54,7 @@ if sumEdge < 0:  # If sum is negative
     XB = np.flipud(XB)  # Flip the X boundary points array
     YB = np.flipud(YB)  # Flip the Y boundary points array
 elif sumEdge > 0:  # If sum is positive
-    print('Points are clockwise.  Not flipping.\n')  # Do nothing, display message in consolve
+    print('Points are clockwise.  Not flipping.\n')  # Do nothing, display message in console
 
 # %% COMPUTE GEOMETRIC VARIABLES
 
@@ -68,12 +72,12 @@ for i in range(numPan):  # Loop over all panels
     dy = YB[i + 1] - YB[i]  # Panel Y length
     S[i] = (dx ** 2 + dy ** 2) ** 0.5  # Panel length
     phi[i] = m.atan2(dy, dx)  # Panel orientation angle [rad]
-    if (phi[i] < 0):  # If panel orientation is negative
+    if phi[i] < 0:  # If panel orientation is negative
         phi[i] = phi[i] + 2 * np.pi  # Add 2pi to the panel angle
 
 # Compute angle of panel normal w.r.t. horizontal and include AoA
 delta = phi + (np.pi / 2)  # Compute panel normal angle [rad]
-beta = delta - (AoA * (np.pi / 180))  # Angle between freestream and panel normal [rad]
+beta = delta - (AoA * (np.pi / 180))  # Angle between free stream and panel normal [rad]
 
 # %% PLOTTING
 
