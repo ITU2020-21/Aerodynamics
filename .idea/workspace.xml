@@ -2,6 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="65d0e54b-a8bb-431f-a990-e3da8a94de47" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/.gitignore" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/load_airfoil_selig.py" afterDir="false" />
       <change afterPath="$PROJECT_DIR$/panel_method_geometry.py" afterDir="false" />
     </list>

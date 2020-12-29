@@ -1,0 +1,96 @@
+# Byte-compiled / optimizewd /DLL files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# C extensions
+# *.so
+
+# Distribution / Packaging
+.Python
+env/
+build/
+develop-eggs/
+dist/
+downloads/
+eggs/
+.eggs/
+.idea/
+lib/
+lib64/
+parts/
+sdist/
+var/
+*__pycache__*
+*.egg-info/
+.installed.cfg
+*.egg
+
+# PyInstaller
+*.manifest
+*.spec
+
+# Installer logs
+pip-log.txt
+pip-delete-this-directory.txt
+
+# Unit test / coverage reports
+htmlcov/
+.tox/
+.coverage
+.coverage.*
+.cache
+nosetests.xml
+coverage.xml
+*,cover
+.hypothesis/
+
+*.mo
+*.pot
+
+#AWS stuff:
+*.headerFile
+
+*.log
+local_settings.py
+
+instance/
+.webassets-cache
+
+.scrapy
+
+# Sphinx documentation
+docs/_build/
+
+# PyBuilder
+target/
+
+# IPython Notebook
+.ipynb_checkpoints
+*.ipynb
+
+.python-version
+
+celerybeat-schedule
+
+.env
+
+venv/
+ENV/
+
+.spyderproject
+
+.idea/
+
+.ropeproject
+
+.vs/
+
+.vscode/
+
+# Artifacts
+OutFile.parquet/
+*.csv
+build.sh
+*_headerFile
+
